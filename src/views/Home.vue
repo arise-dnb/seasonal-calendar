@@ -1,23 +1,24 @@
 <template>
   <div>
-    <div @click="consolelog($event)" class="home">{{ count }}</div>
+    <div class="home" @click="consolelog($event)">{{ count }}</div>
     <!--@event = v-on:event-->
-    <div v-for="element in filteredArray" v-bind:key="element.name">{{ element.name }}</div>
+    <div v-for="element in filteredArray" :key="element.name">
+      {{ element.name }}
+    </div>
     <!--:key = v-bind:key-->
-    <input type="text" v-model="filter" />
+    <input v-model="filter" type="text" />
     <GridView />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src...
-import HelloWorld from "@/components/HelloWorld.vue";
+
 import GridView from "@/components/GridView.vue";
 
 export default {
-  name: "home",
+  name: "Home",
   components: {
-    HelloWorld,
     GridView
   },
   data: function() {
