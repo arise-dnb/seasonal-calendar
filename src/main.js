@@ -4,8 +4,14 @@ import router from "./router";
 import "./registerServiceWorker";
 import axios from "axios";
 import VueAxios from "vue-axios";
+import PortalVue from "portal-vue";
+import BootstrapVue from "bootstrap-vue";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
 
 Vue.use(VueAxios, axios);
+Vue.use(PortalVue);
+Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false;
 

@@ -5,17 +5,20 @@
     <div v-for="element in filteredArray" v-bind:key="element.name">{{ element.name }}</div>
     <!--:key = v-bind:key-->
     <input type="text" v-model="filter" />
+    <GridView />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src...
 import HelloWorld from "@/components/HelloWorld.vue";
+import GridView from "@/components/GridView.vue";
 
 export default {
   name: "home",
   components: {
-    HelloWorld
+    HelloWorld,
+    GridView
   },
   data: function() {
     return {
