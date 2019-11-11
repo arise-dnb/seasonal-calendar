@@ -4,18 +4,18 @@
     <!--@event = v-on:event-->
     <div v-for="element in filteredArray" v-bind:key="element.name">{{ element.name }}</div>
     <!--:key = v-bind:key-->
-    <input type="text" v-model="filter" />
+    <SearchBar />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src...
-import HelloWorld from "@/components/HelloWorld.vue";
+import SearchBar from "@/components/SearchBar.vue";
 
 export default {
   name: "home",
   components: {
-    HelloWorld
+    SearchBar
   },
   data: function() {
     return {
