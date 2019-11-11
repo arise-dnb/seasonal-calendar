@@ -1,23 +1,26 @@
 <template>
   <div>
-    <div @click="consolelog($event)" class="home">{{ count }}</div>
+    <div class="home" @click="consolelog($event)">{{ count }}</div>
     <!--@event = v-on:event-->
-    <div v-for="element in filteredArray" v-bind:key="element.name">{{ element.name }}</div>
+    <div v-for="element in filteredArray" :key="element.name">
+      {{ element.name }}
+    </div>
     <!--:key = v-bind:key-->
-    <SearchBar v-on:childToParent="onSearch"></SearchBar>
+    <input v-model="filter" type="text" />
+    <GridView />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src...
-import SearchBar from "@/components/SearchBar.vue";
+
+import GridView from "@/components/GridView.vue";
 
 export default {
-  name: "home",
+  name: "Home",
   components: {
-    SearchBar
+    GridView
   },
-  //Variablen und Arrays, die die View verwendet
   data: function() {
     return {
       count: 0,
@@ -26,11 +29,9 @@ export default {
         { name: "Apfel", image: "link1" },
         { name: "Birne", image: "link2" },
         { name: "Brombeere", image: "link3" }
-      ] //,
-      //fromChild: "" // This value is set to the value emitted by the child
+      ]
     };
   },
-  //berechnete Variable
   computed: {
     filteredArray() {
       let self = this;
@@ -39,7 +40,6 @@ export default {
       });
     }
   },
-  //auszuführende Methoden
   methods: {
     consolelog(test) {
       console.log(test);
@@ -55,11 +55,6 @@ export default {
       console.log(testobj.var2);
       let var3 = "var2";
       console.log(testobj[var3]); //Objekt ist im Prinzip nur ein Array
-    },
-    onSearch(value) {
-      this.filter = value;
-      console.log("event activated");
-      console.log(value);
     }
   }
 }; //Teil der ausgeführt wird
