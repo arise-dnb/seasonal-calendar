@@ -2,19 +2,24 @@
   <div class="search">
     <h1>Search Bar</h1>
 
-    <input type="text" placeholder="Search..." v-model="filter" />
+    <input type="text" v-model="filter" placeholder="Search..." v-on:keyup="emitToParent" />
   </div>
 </template>
 
 <script>
 export default {
-  name: "HelloWorld",
-  props: {
-    msg: String
+  name: "SearchBar",
+  data() {
+    return {
+      filter: ""
+    };
+  },
+  methods: {
+    // Define the method that emits data to the parent as the first parameter to `$emit()`.
+    // This is referenced in the <template> call in the parent. The second parameter is the payload.
+    emitToParent(event) {
+      this.$emit("childToParent", this.filter);
+    }
   }
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-</style>

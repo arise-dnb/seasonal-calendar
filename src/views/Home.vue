@@ -4,7 +4,7 @@
     <!--@event = v-on:event-->
     <div v-for="element in filteredArray" v-bind:key="element.name">{{ element.name }}</div>
     <!--:key = v-bind:key-->
-    <SearchBar />
+    <SearchBar v-on:childToParent="onSearch"></SearchBar>
   </div>
 </template>
 
@@ -17,6 +17,7 @@ export default {
   components: {
     SearchBar
   },
+  //Variablen und Arrays, die die View verwendet
   data: function() {
     return {
       count: 0,
@@ -25,9 +26,11 @@ export default {
         { name: "Apfel", image: "link1" },
         { name: "Birne", image: "link2" },
         { name: "Brombeere", image: "link3" }
-      ]
+      ] //,
+      //fromChild: "" // This value is set to the value emitted by the child
     };
   },
+  //berechnete Variable
   computed: {
     filteredArray() {
       let self = this;
@@ -36,6 +39,7 @@ export default {
       });
     }
   },
+  //auszuführende Methoden
   methods: {
     consolelog(test) {
       console.log(test);
@@ -51,6 +55,11 @@ export default {
       console.log(testobj.var2);
       let var3 = "var2";
       console.log(testobj[var3]); //Objekt ist im Prinzip nur ein Array
+    },
+    onSearch(value) {
+      this.filter = value;
+      console.log("event activated");
+      console.log(value);
     }
   }
 }; //Teil der ausgeführt wird
