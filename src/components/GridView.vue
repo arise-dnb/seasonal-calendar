@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div id="imagewrapper">
     <div
       v-for="(image, index) in imgArray"
-      id="immagewrapper"
       :key="image.name + index"
+      class="image"
     >
       <b-img :src="image.src"></b-img>
     </div>
@@ -28,8 +28,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.immagewrapper {
-  display: flex; /* or inline-flex */
+#immagewrapper {
+  background-color: powderblue;
+  display: flex;
   flex-wrap: wrap;
+}
+.image {
+  max-width: 500px;
+  float: left;
 }
 </style>
