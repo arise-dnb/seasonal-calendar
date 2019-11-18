@@ -1,8 +1,6 @@
 <template>
   <div>
     <DateHeader />
-    <div class="home" @click="consolelog($event)">{{ count }}</div>
-    <!--@event = v-on:event-->
     <SearchBar v-on:childToParent="onSearch" />
     <div v-for="element in filteredArray" :key="element.name">
       {{ element.name }}

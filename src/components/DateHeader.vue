@@ -12,10 +12,29 @@ export default {
       date: ""
     };
   },
-  mounted: {
+
+  mounted() {
+    this.showDate();
+  },
+
+  methods: {
     showDate() {
       let today = new Date();
-      this.date = today.getDate() + "." + (today.getMonth() + 1);
+      let month = new Array(
+        "Januar",
+        "Februar",
+        "März",
+        "April",
+        "Mai",
+        "Juni",
+        "Juli",
+        "August",
+        "September",
+        "Oktober",
+        "November",
+        "Dezember"
+      );
+      this.date = today.getDate() + "." + month[today.getMonth()];
     }
   }
 };
