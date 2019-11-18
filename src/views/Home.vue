@@ -55,7 +55,7 @@ export default {
         var1: 0,
         var2: 28
       };
-      console.log(testobj);
+      // console.log(testobj);
       console.log(testobj.var2);
       let var3 = "var2";
       console.log(testobj[var3]); //Objekt ist im Prinzip nur ein Array
