@@ -1,12 +1,12 @@
 <template>
   <div>
-    <b-container fluid class="p-4 bg-dark">
-      <b-row>
-        <b-col v-for="(image, index) in imgArray" :key="image.name + index">
-          <b-img thumbnail fluid :src="image.src"></b-img>
-        </b-col>
-      </b-row>
-    </b-container>
+    <div
+      v-for="(image, index) in imgArray"
+      id="immagewrapper"
+      :key="image.name + index"
+    >
+      <b-img :src="image.src"></b-img>
+    </div>
   </div>
 </template>
 
@@ -27,4 +27,9 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style scoped>
+.immagewrapper {
+  display: flex; /* or inline-flex */
+  flex-wrap: wrap;
+}
+</style>
