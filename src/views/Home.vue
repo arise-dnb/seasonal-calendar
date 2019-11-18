@@ -1,12 +1,14 @@
 <template>
   <div>
+    <DateHeader />
     <div class="home" @click="consolelog($event)">{{ count }}</div>
     <!--@event = v-on:event-->
+    <SearchBar v-on:childToParent="onSearch" />
     <div v-for="element in filteredArray" :key="element.name">
       {{ element.name }}
     </div>
     <!--:key = v-bind:key-->
-    <input v-model="filter" type="text" />
+
     <GridView />
   </div>
 </template>
@@ -15,11 +17,15 @@
 // @ is an alias to /src...
 
 import GridView from "@/components/GridView.vue";
+import SearchBar from "@/components/SearchBar.vue";
+import DateHeader from "@/components/DateHeader.vue";
 
 export default {
   name: "Home",
   components: {
-    GridView
+    DateHeader,
+    GridView,
+    SearchBar
   },
   data: function() {
     return {
@@ -55,6 +61,10 @@ export default {
       console.log(testobj.var2);
       let var3 = "var2";
       console.log(testobj[var3]); //Objekt ist im Prinzip nur ein Array
+    },
+
+    onSearch(value) {
+      this.filter = value;
     }
   }
 }; //Teil der ausgeführt wird

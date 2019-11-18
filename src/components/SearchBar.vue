@@ -1,8 +1,11 @@
 <template>
   <div class="search">
-    <h1>Search Bar</h1>
-
-    <input type="text" v-model="filter" placeholder="Search..." v-on:keyup="emitToParent" />
+    <input
+      type="text"
+      v-model="filter"
+      placeholder="Search..."
+      v-on:keyup="emitToParent"
+    />
   </div>
 </template>
 
