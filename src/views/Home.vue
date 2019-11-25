@@ -1,12 +1,13 @@
 <template>
   <div>
-    <DateHeader />
-    <SearchBar v-on:childToParent="onSearch" />
-    <div v-for="element in filteredArray" :key="element.name">
-      {{ element.name }}
+    <div class="header">
+      <DateHeader />
+      <SearchBar @childToParent="onSearch" />
+      <div v-for="element in filteredArray" :key="element.name">
+        {{ element.name }}
+      </div>
+      <!--:key = v-bind:key-->
     </div>
-    <!--:key = v-bind:key-->
-
     <GridView />
   </div>
 </template>
@@ -67,3 +68,12 @@ export default {
   }
 }; //Teil der ausgeführt wird
 </script>
+
+<style>
+.header {
+  position: fixed;
+  margin: 0 auto;
+  background-color: rgb(80, 78, 79);
+  width: 100%;
+}
+</style>

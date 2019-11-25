@@ -1,10 +1,10 @@
 <template>
   <div class="search">
     <input
-      type="text"
       v-model="filter"
+      type="text"
       placeholder="Search..."
-      v-on:keyup="emitToParent"
+      @keyup="emitToParent"
     />
   </div>
 </template>
