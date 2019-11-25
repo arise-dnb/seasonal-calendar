@@ -24,10 +24,11 @@ export default {
 .image {
   max-width: 500px;
   margin: 10px;
+
   float: left;
   align-content: space-between;
 }
 .text {
-  color: blue;
+  color: rgb(13, 13, 14);
 }
 </style>

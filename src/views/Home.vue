@@ -89,7 +89,7 @@ export default {
 .header {
   position: fixed;
   margin: 0 auto;
-  width: 100%;
   background-color: #d4c9c0;
+  width: 100%;
 }
 </style>
