@@ -3,12 +3,12 @@
     <div class="header">
       <DateHeader />
       <SearchBar @childToParent="onSearch" />
-      <div v-for="element in filteredArray" :key="element.name">
-        {{ element.name }}
-      </div>
+      <div v-for="element in filteredArray" :key="element.name">{{ element.name }}</div>
       <!--:key = v-bind:key-->
+      <button @click="onButton()">update</button>
+      {{ today }}
     </div>
-    <GridView />
+    <GridView :pictures="imgArray" />
   </div>
 </template>
 
@@ -31,9 +31,18 @@ export default {
       count: 0,
       filter: "",
       array: [
-        { name: "Apfel", image: "link1" },
-        { name: "Birne", image: "link2" },
-        { name: "Brombeere", image: "link3" }
+        { name: "Apfel", month: "1" },
+        { name: "Birne", month: "1" },
+        { name: "Brombeere", month: "2" },
+        { name: "Apfel", month: "2" },
+        { name: "Birne", month: "2" },
+        { name: "Brombeere", month: "3" }
+      ],
+      imgArray: [
+        { name: "Mandarine", src: "https://picsum.photos/250/250/?image=58" },
+        { name: "Apfel", src: "https://picsum.photos/250/250/?image=58" },
+        { name: "Birne", src: "https://picsum.photos/250/250/?image=58" },
+        { name: "Orange", src: "https://picsum.photos/250/250/?image=58" }
       ]
     };
   },
@@ -41,8 +50,11 @@ export default {
     filteredArray() {
       let self = this;
       return this.array.filter(function(x) {
-        return x.name.includes(self.filter);
+        return x.month.includes(self.filter);
       });
+    },
+    today() {
+      return new Date() + this.filter;
     }
   },
   methods: {
@@ -62,6 +74,10 @@ export default {
       console.log(testobj[var3]); //Objekt ist im Prinzip nur ein Array
     },
 
+    onButton() {
+      console.log(this.today);
+    },
+
     onSearch(value) {
       this.filter = value;
     }
@@ -73,11 +89,7 @@ export default {
 .header {
   position: fixed;
   margin: 0 auto;
-  background-color: rgb(80, 78, 79);
   width: 100%;
-}
-
-#wrapper {
   background-color: #d4c9c0;
 }
 </style>

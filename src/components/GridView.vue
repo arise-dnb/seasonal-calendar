@@ -1,6 +1,6 @@
 <template>
   <div id="imagewrapper">
-    <div v-for="(image, index) in imgArray" :key="image.name + index" class="image">
+    <div v-for="(image, index) in pictures" :key="image.name + index + 'g'" class="image">
       <b-img :src="image.src"></b-img>
       <div class="text">{{ image.name }}</div>
     </div>
@@ -10,22 +10,13 @@
 <script>
 export default {
   name: "GridView",
-  data() {
-    return {
-      imgArray: [
-        { name: "Mandarine", src: "https://picsum.photos/250/250/?image=58" },
-        { name: "Apfel", src: "https://picsum.photos/250/250/?image=58" },
-        { name: "Birne", src: "https://picsum.photos/250/250/?image=58" },
-        { name: "Orange", src: "https://picsum.photos/250/250/?image=58" }
-      ]
-    };
-  }
+  props: { pictures: Array }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#immagewrapper {
+#imagewrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
