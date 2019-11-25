@@ -1,10 +1,8 @@
 <template>
-  <div>
+  <div id="wrapper">
     <DateHeader />
     <SearchBar v-on:childToParent="onSearch" />
-    <div v-for="element in filteredArray" :key="element.name">
-      {{ element.name }}
-    </div>
+    <div v-for="element in filteredArray" :key="element.name">{{ element.name }}</div>
     <!--:key = v-bind:key-->
 
     <GridView />
@@ -67,3 +65,9 @@ export default {
   }
 }; //Teil der ausgeführt wird
 </script>
+
+<style scoped>
+#wrapper {
+  background-color: #d4c9c0;
+}
+</style>

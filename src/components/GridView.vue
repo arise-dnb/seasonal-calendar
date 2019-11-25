@@ -1,10 +1,6 @@
 <template>
   <div id="imagewrapper">
-    <div
-      v-for="(image, index) in imgArray"
-      :key="image.name + index"
-      class="image"
-    >
+    <div v-for="(image, index) in imgArray" :key="image.name + index" class="image">
       <b-img :src="image.src"></b-img>
 
       <div v-if="imgArray[index] % 2 === 0">
@@ -36,7 +32,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #immagewrapper {
-  background-color: rgb(12, 143, 160);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -48,7 +43,6 @@ export default {
   align-content: space-between;
 }
 .break {
-  background-color: rgb(12, 143, 160);
   src: "https://picsum.photos/250/250/?image=58";
   src: "https://picsum.photos/250/250/?image=54";
 }
