@@ -73,11 +73,7 @@ export default {
 .header {
   position: fixed;
   margin: 0 auto;
-  background-color: rgb(80, 78, 79);
-  width: 100%;
-}
-
-#wrapper {
   background-color: #d4c9c0;
+  width: 100%;
 }
 </style>

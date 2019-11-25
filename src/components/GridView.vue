@@ -1,6 +1,10 @@
 <template>
   <div id="imagewrapper">
-    <div v-for="(image, index) in imgArray" :key="image.name + index" class="image">
+    <div
+      v-for="(image, index) in imgArray"
+      :key="image.name + index"
+      class="image"
+    >
       <b-img :src="image.src"></b-img>
       <div class="text">{{ image.name }}</div>
     </div>
@@ -13,6 +17,7 @@ export default {
   data() {
     return {
       imgArray: [
+        { name: "Mandarine", src: "https://picsum.photos/250/250/?image=58" },
         { name: "Mandarine", src: "https://picsum.photos/250/250/?image=58" },
         { name: "Apfel", src: "https://picsum.photos/250/250/?image=58" },
         { name: "Birne", src: "https://picsum.photos/250/250/?image=58" },
@@ -33,10 +38,11 @@ export default {
 .image {
   max-width: 500px;
   margin: 10px;
+
   float: left;
   align-content: space-between;
 }
 .text {
-  color: blue;
+  color: rgb(13, 13, 14);
 }
 </style>
