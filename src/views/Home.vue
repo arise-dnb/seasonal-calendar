@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="wrapper">
     <div class="header">
       <DateHeader />
       <SearchBar @childToParent="onSearch" />
@@ -75,5 +75,9 @@ export default {
   margin: 0 auto;
   background-color: rgb(80, 78, 79);
   width: 100%;
+}
+
+#wrapper {
+  background-color: #d4c9c0;
 }
 </style>

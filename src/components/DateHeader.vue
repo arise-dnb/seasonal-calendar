@@ -1,7 +1,5 @@
 <template>
-  <div>
-    {{ date }}
-  </div>
+  <div id="dateheader">{{ date }}</div>
 </template>
 
 <script>
@@ -41,4 +39,9 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style scoped>
+#dateheader {
+  font-family: "Playfair Display", "serif";
+  font-size: 20pt;
+}
+</style>

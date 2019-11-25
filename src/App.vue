@@ -5,12 +5,15 @@
 </template>
 
 <style>
+@import url("https://fonts.googleapis.com/css?family=Lato|Playfair+Display&display=swap");
+
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: "Lato", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color: #d4c9c0;
 }
 #nav {
   padding: 30px;
