@@ -10,7 +10,7 @@
 <script>
 export default {
   name: "GridView",
-  props: { pictures: Array }
+  props: { pictures: Object }
 };
 </script>
 

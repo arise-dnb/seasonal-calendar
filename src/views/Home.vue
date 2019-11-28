@@ -5,10 +5,9 @@
       <SearchBar @childToParent="onSearch" />
       <div v-for="element in filteredArray" :key="element.name">{{ element.name }}</div>
       <!--:key = v-bind:key-->
-      <button @click="onButton()">update</button>
-      {{ today }}
+      {{ cur_month }}
     </div>
-    <GridView :pictures="imgArray" />
+    <GridView :pictures="crops" />
   </div>
 </template>
 
@@ -30,20 +29,36 @@ export default {
     return {
       count: 0,
       filter: "",
-      array: [
-        { name: "Apfel", month: "1" },
-        { name: "Birne", month: "1" },
-        { name: "Brombeere", month: "2" },
-        { name: "Apfel", month: "2" },
-        { name: "Birne", month: "2" },
-        { name: "Brombeere", month: "3" }
-      ],
-      imgArray: [
-        { name: "Mandarine", src: "https://picsum.photos/250/250/?image=58" },
-        { name: "Apfel", src: "https://picsum.photos/250/250/?image=58" },
-        { name: "Birne", src: "https://picsum.photos/250/250/?image=58" },
-        { name: "Orange", src: "https://picsum.photos/250/250/?image=58" }
-      ]
+      cur_month: 0,
+      array: [{ name: "Apfel", month: "1" }, { name: "Birne", month: "1" }],
+
+      crops: {
+        Apfel: {
+          name: "Apfel",
+          id: "1",
+          src: "https://picsum.photos/id/54/250/250"
+        },
+        Birne: {
+          name: "Birne",
+          id: "2",
+          src: "https://picsum.photos/id/59/250/250"
+        }
+      },
+
+      month: {
+        jan: { m_id: 1, name: "Januar", crops: [1, 2] },
+        feb: { m_id: 2, name: "Februar", crops: [1, 2] },
+        mar: { m_id: 3, name: "März", crops: [1] },
+        apr: { m_id: 4, name: "April", crops: [1] },
+        may: { m_id: 5, name: "Mai", crops: [1] },
+        jun: { m_id: 6, name: "Juni", crops: [2] },
+        jul: { m_id: 7, name: "Juli", crops: [2] },
+        aug: { m_id: 8, name: "August", crops: [1, 2] },
+        sep: { m_id: 9, name: "September", crops: [1, 2] },
+        oct: { m_id: 10, name: "Oktober", crops: [1, 2] },
+        nov: { m_id: 11, name: "November", crops: [1] },
+        dec: { m_id: 12, name: "Dezember", crops: [] }
+      }
     };
   },
   computed: {
@@ -53,10 +68,22 @@ export default {
         return x.month.includes(self.filter);
       });
     },
+    /*  Wie filtert man ein Objekt
+    filteredObject() {
+      let self = this;
+      return this.month.filter(function(x) {
+        return x.m_id.includes(self.cur_mon);
+      });
+    },*/
     today() {
       return new Date() + this.filter;
     }
   },
+
+  mounted() {
+    this.currentMonth();
+  },
+
   methods: {
     consolelog(test) {
       console.log(test);
@@ -74,8 +101,9 @@ export default {
       console.log(testobj[var3]); //Objekt ist im Prinzip nur ein Array
     },
 
-    onButton() {
-      console.log(this.today);
+    currentMonth() {
+      let today = new Date();
+      this.cur_month = today.getMonth() + 1;
     },
 
     onSearch(value) {
