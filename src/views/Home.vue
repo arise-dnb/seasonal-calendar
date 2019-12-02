@@ -1,13 +1,14 @@
 <template>
-  <div id="wrapper">
+  <div>
     <div class="header">
       <DateHeader />
       <SearchBar @childToParent="onSearch" />
-      <div v-for="element in filteredArray" :key="element.name">{{ element.name }}</div>
+      <div v-for="element in filteredArray" :key="element">{{ element }}</div>
       <!--:key = v-bind:key-->
-      {{ cur_month }}
+      {{ curMonth }}
+      {{ filteredArray }}
     </div>
-    <GridView :pictures="crops" />
+    <GridView :pictures="filteredArray" />
   </div>
 </template>
 
@@ -29,52 +30,55 @@ export default {
     return {
       count: 0,
       filter: "",
-      cur_month: 0,
+      curMonth: "1",
       array: [{ name: "Apfel", month: "1" }, { name: "Birne", month: "1" }],
 
       crops: {
-        Apfel: {
+        apfel: {
           name: "Apfel",
           id: "1",
           src: "https://picsum.photos/id/54/250/250"
         },
-        Birne: {
+        birne: {
           name: "Birne",
           id: "2",
+          src: "https://picsum.photos/id/59/250/250"
+        },
+        kirsche: {
+          name: "Kirsche",
+          id: "3",
           src: "https://picsum.photos/id/59/250/250"
         }
       },
 
-      month: {
-        jan: { m_id: 1, name: "Januar", crops: [1, 2] },
-        feb: { m_id: 2, name: "Februar", crops: [1, 2] },
-        mar: { m_id: 3, name: "März", crops: [1] },
-        apr: { m_id: 4, name: "April", crops: [1] },
-        may: { m_id: 5, name: "Mai", crops: [1] },
-        jun: { m_id: 6, name: "Juni", crops: [2] },
-        jul: { m_id: 7, name: "Juli", crops: [2] },
-        aug: { m_id: 8, name: "August", crops: [1, 2] },
-        sep: { m_id: 9, name: "September", crops: [1, 2] },
-        oct: { m_id: 10, name: "Oktober", crops: [1, 2] },
-        nov: { m_id: 11, name: "November", crops: [1] },
-        dec: { m_id: 12, name: "Dezember", crops: [] }
-      }
+      months: [
+        { mID: "1", name: "Januar", seasonal: ["apfel", "birne"] },
+        { mID: "2", name: "Februar", seasonal: ["apfel", "birne"] },
+        { mID: "3", name: "März", seasonal: ["apfel"] },
+        { mID: "4", name: "April", seasonal: ["apfel"] },
+        { mID: "5", name: "Mai", seasonal: ["apfel"] },
+        { mID: "6", name: "Juni", seasonal: ["birne"] },
+        { mID: "7", name: "Juli", seasonal: ["birne"] },
+        { mID: "8", name: "August", seasonal: ["apfel", "birne"] },
+        { mID: "9", name: "September", seasonal: ["apfel", "birne"] },
+        { mID: "10", name: "Oktober", seasonal: ["apfel", "birne"] },
+        { mID: "11", name: "November", seasonal: ["apfel"] },
+        { mID: "12", name: "Dezember", seasonal: ["kirsche"] }
+      ]
     };
   },
   computed: {
     filteredArray() {
       let self = this;
-      return this.array.filter(function(x) {
-        return x.month.includes(self.filter);
-      });
+      return this.months
+        .filter(function(month) {
+          return month.mID === self.curMonth;
+        })[0]
+        .seasonal.map(function(seasonal) {
+          return self.crops[seasonal];
+        });
     },
-    /*  Wie filtert man ein Objekt
-    filteredObject() {
-      let self = this;
-      return this.month.filter(function(x) {
-        return x.m_id.includes(self.cur_mon);
-      });
-    },*/
+
     today() {
       return new Date() + this.filter;
     }
@@ -103,7 +107,7 @@ export default {
 
     currentMonth() {
       let today = new Date();
-      this.cur_month = today.getMonth() + 1;
+      this.curMonth = (today.getMonth() + 1).toString();
     },
 
     onSearch(value) {

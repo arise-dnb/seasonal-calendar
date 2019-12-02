@@ -1,5 +1,5 @@
 <template>
-  <div id="imagewrapper">
+  <div class="imgWrapper">
     <div v-for="(image, index) in pictures" :key="image.name + index + 'g'" class="image">
       <b-img :src="image.src"></b-img>
       <div class="text">{{ image.name }}</div>
@@ -10,13 +10,13 @@
 <script>
 export default {
   name: "GridView",
-  props: { pictures: Object }
+  props: { pictures: Array } //default-Wert fehlt
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#imagewrapper {
+.imgWrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

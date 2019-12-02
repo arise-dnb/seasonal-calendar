@@ -1,5 +1,5 @@
 <template>
-  <div id="dateheader">{{ date }}</div>
+  <div class="dateheader">{{ date }}</div>
 </template>
 
 <script>
@@ -18,7 +18,7 @@ export default {
   methods: {
     showDate() {
       let today = new Date();
-      let month = new Array(
+      let month = [
         "Januar",
         "Februar",
         "März",
@@ -31,7 +31,7 @@ export default {
         "Oktober",
         "November",
         "Dezember"
-      );
+      ];
       this.date = today.getDate() + "." + month[today.getMonth()];
     }
   }
@@ -40,7 +40,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#dateheader {
+.dateheader {
   font-family: "Playfair Display", "serif";
   font-size: 20pt;
 }
