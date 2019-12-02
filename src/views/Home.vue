@@ -3,10 +3,8 @@
     <div class="header">
       <DateHeader />
       <SearchBar @childToParent="onSearch" />
-      <div v-for="element in filteredArray" :key="element">{{ element }}</div>
+      <!--<div v-for="element in filteredArray" :key="element">{{ element }}</div>-->
       <!--:key = v-bind:key-->
-      {{ curMonth }}
-      {{ filteredArray }}
     </div>
     <GridView :pictures="filteredArray" />
   </div>
