@@ -2,6 +2,7 @@
   <div class="search">
     <input
       v-model="filter"
+      class="search"
       type="text"
       placeholder="Search..."
       @keyup="emitToParent"
@@ -26,3 +27,12 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.search {
+  width: 100%;
+  height: 40px;
+  font-size: 16pt;
+  border: none;
+}
+</style>

@@ -42,6 +42,6 @@ export default {
 <style scoped>
 .dateheader {
   font-family: "Playfair Display", "serif";
-  font-size: 20pt;
+  font-size: 30pt;
 }
 </style>

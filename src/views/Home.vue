@@ -5,6 +5,7 @@
       <SearchBar @childToParent="onSearch" />
       <!--<div v-for="element in filteredArray" :key="element">{{ element }}</div>-->
       <!--:key = v-bind:key-->
+      <hr />
     </div>
     <GridView :pictures="filteredArray" />
   </div>
@@ -34,34 +35,166 @@ export default {
       crops: {
         apfel: {
           name: "Apfel",
-          id: "1",
-          src: "https://picsum.photos/id/54/250/250"
+          id: "101",
+          src: require("../assets/fruits/apple_s.jpg")
         },
         birne: {
           name: "Birne",
-          id: "2",
-          src: "https://picsum.photos/id/59/250/250"
+          id: "102",
+          src: require("../assets/fruits/pear_s.jpg")
+        },
+        blaubeere: {
+          name: "Blaubeeren",
+          id: "103",
+          src: require("../assets/fruits/blueberry_s.jpg")
+        },
+        brombeere: {
+          name: "Brombeeren",
+          id: "104",
+          src: require("../assets/fruits/blackberry_s.jpg")
+        },
+        erdbeere: {
+          name: "Erdbeere",
+          id: "105",
+          src: require("../assets/fruits/strawberry_s.jpg")
         },
         kirsche: {
           name: "Kirsche",
-          id: "3",
-          src: "https://picsum.photos/id/59/250/250"
+          id: "106",
+          src: require("../assets/fruits/cherry_s.jpg")
+        },
+        pflaume: {
+          name: "Pflaume",
+          id: "107",
+          src: require("../assets/fruits/plum_s.jpg")
+        },
+        aubergine: {
+          name: "Aubergine",
+          id: "201",
+          src: require("../assets/fruits/eggplant_s.jpg")
+        },
+        blumenkohl: {
+          name: "Blumenkohl",
+          id: "202",
+          src: require("../assets/fruits/cauli_s.jpg")
+        },
+        erbse: {
+          name: "Erbse",
+          id: "203",
+          src: require("../assets/fruits/pea_s.jpg")
+        },
+        lauch: {
+          name: "Lauch",
+          id: "204",
+          src: require("../assets/fruits/leek_s.jpg")
+        },
+        karotte: {
+          name: "Karotte",
+          id: "205",
+          src: require("../assets/fruits/carrot_s.jpg")
+        },
+        paprika: {
+          name: "Paprika",
+          id: "206",
+          src: require("../assets/fruits/paprika_s.jpg")
+        },
+        spinat: {
+          name: "Spinat",
+          id: "207",
+          src: require("../assets/fruits/spinach_s.jpg")
         }
       },
 
       months: [
-        { mID: "1", name: "Januar", seasonal: ["apfel", "birne"] },
-        { mID: "2", name: "Februar", seasonal: ["apfel", "birne"] },
-        { mID: "3", name: "März", seasonal: ["apfel"] },
-        { mID: "4", name: "April", seasonal: ["apfel"] },
-        { mID: "5", name: "Mai", seasonal: ["apfel"] },
-        { mID: "6", name: "Juni", seasonal: ["birne"] },
-        { mID: "7", name: "Juli", seasonal: ["birne"] },
-        { mID: "8", name: "August", seasonal: ["apfel", "birne"] },
-        { mID: "9", name: "September", seasonal: ["apfel", "birne"] },
-        { mID: "10", name: "Oktober", seasonal: ["apfel", "birne"] },
-        { mID: "11", name: "November", seasonal: ["apfel"] },
-        { mID: "12", name: "Dezember", seasonal: ["kirsche"] }
+        { mID: "1", name: "Januar", seasonal: ["lauch"] },
+        { mID: "2", name: "Februar", seasonal: ["lauch"] },
+        { mID: "3", name: "März", seasonal: ["lauch", "spinat"] },
+        { mID: "4", name: "April", seasonal: ["lauch", "spinat"] },
+        { mID: "5", name: "Mai", seasonal: ["blumenkohl", "spinat"] },
+        {
+          mID: "6",
+          name: "Juni",
+          seasonal: [
+            "blaubeere",
+            "erdbeere",
+            "kirsche",
+            "blumenkohl",
+            "erbse",
+            "karotte"
+          ]
+        },
+        {
+          mID: "7",
+          name: "Juli",
+          seasonal: [
+            "blaubeere",
+            "brombeere",
+            "erdbeere",
+            "kirsche",
+            "pflaume",
+            "blumenkohl",
+            "erbse",
+            "lauch",
+            "karotte"
+          ]
+        },
+        {
+          mID: "8",
+          name: "August",
+          seasonal: [
+            "apfel",
+            "blaubeere",
+            "brombeere",
+            "erdbeere",
+            "kirsche",
+            "pflaume",
+            "aubergine",
+            "blumenkohl",
+            "erbse",
+            "lauch",
+            "karotte",
+            "paprika"
+          ]
+        },
+        {
+          mID: "9",
+          name: "September",
+          seasonal: [
+            "apfel",
+            "birne",
+            "blaubeere",
+            "brombeere",
+            "erdbeere",
+            "pflaume",
+            "aubergine",
+            "blumenkohl",
+            "erbse",
+            "lauch",
+            "karotte",
+            "paprika",
+            "spinat"
+          ]
+        },
+        {
+          mID: "10",
+          name: "Oktober",
+          seasonal: [
+            "apfel",
+            "blaubeere",
+            "aubergine",
+            "blumenkohl",
+            "lauch",
+            "karotte",
+            "paprika",
+            "spinat"
+          ]
+        },
+        {
+          mID: "11",
+          name: "November",
+          seasonal: ["apfel", "lauch", "karotte"]
+        },
+        { mID: "12", name: "Dezember", seasonal: ["lauch"] }
       ]
     };
   },
@@ -117,9 +250,18 @@ export default {
 
 <style>
 .header {
-  position: fixed;
-  margin: 0 auto;
   background-color: #d4c9c0;
-  width: 100%;
+  width: 90%;
+  padding-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+hr {
+  background-color: #2c3e50;
+  width: 95%;
+  height: 1px !important;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
