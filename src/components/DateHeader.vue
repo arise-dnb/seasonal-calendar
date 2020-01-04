@@ -43,5 +43,6 @@ export default {
 .dateheader {
   font-family: "Playfair Display", "serif";
   font-size: 30pt;
+  font-weight: 700;
 }
 </style>

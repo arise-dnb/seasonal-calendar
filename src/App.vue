@@ -5,11 +5,12 @@
 </template>
 
 <style>
-@import url("https://fonts.googleapis.com/css?family=Lato|Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato|Playfair+Display:400,700&display=swap");
 
 html,
 body {
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
 #app {
@@ -18,7 +19,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
   color: #2c3e50;
-  background-color: #d4c9c0;
+  background-color: #d4c9c1;
   height: 100vh;
   width: 100vw;
 }

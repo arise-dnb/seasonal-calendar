@@ -7,7 +7,9 @@
       <!--:key = v-bind:key-->
       <hr />
     </div>
-    <GridView :pictures="filteredArray" />
+    <div class="list">
+      <GridView :pictures="filteredArray" />
+    </div>
   </div>
 </template>
 
@@ -106,7 +108,7 @@ export default {
       },
 
       months: [
-        { mID: "1", name: "Januar", seasonal: ["lauch"] },
+        { mID: "1", name: "Januar", seasonal: ["lauch", "lauch", "lauch"] },
         { mID: "2", name: "Februar", seasonal: ["lauch"] },
         { mID: "3", name: "März", seasonal: ["lauch", "spinat"] },
         { mID: "4", name: "April", seasonal: ["lauch", "spinat"] },
@@ -194,7 +196,11 @@ export default {
           name: "November",
           seasonal: ["apfel", "lauch", "karotte"]
         },
-        { mID: "12", name: "Dezember", seasonal: ["lauch"] }
+        {
+          mID: "12",
+          name: "Dezember",
+          seasonal: ["apfel", "lauch", "karotte", "apfel", "lauch", "karotte"]
+        } //eigentlich nur lauch
       ]
     };
   },
@@ -250,11 +256,9 @@ export default {
 
 <style>
 .header {
-  background-color: #d4c9c0;
-  width: 90%;
-  padding-top: 5%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  height: auto;
+  padding: 0% 3%;
 }
 
 hr {
@@ -263,5 +267,9 @@ hr {
   height: 1px !important;
   margin-left: auto;
   margin-right: auto;
+}
+
+.list {
+  margin: 2%;
 }
 </style>

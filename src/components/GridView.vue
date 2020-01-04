@@ -20,6 +20,8 @@ export default {
   padding: 10px 10px;
   width: 90%;
   height: 100%;
+  overflow-y: auto;
+  max-height: 70vh;
 
   display: flex;
   flex-direction: row;
@@ -27,10 +29,6 @@ export default {
   border-radius: 10px;
   background-color: white;
 
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   margin-left: auto;
   margin-right: auto;
 
