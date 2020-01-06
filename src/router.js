@@ -16,11 +16,6 @@ export default new Router({
       path: "/fruit",
       name: "fruit",
       component: Fruit
-    },
-    {
-      path: "/details/:Pid",
-      name: "details",
-      component: details
     }
   ]
 });
