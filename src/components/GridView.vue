@@ -1,7 +1,7 @@
 <template>
   <div class="imgWrapper">
     <div v-for="(image, index) in pictures" :key="image.name + index + 'g'" class="thumbnail">
-      <b-img :src="image.src" fluid />
+      <b-img :src="image.src" fluid @click="goToDetail(pictures)" />
       <div class="text">{{ image.name }}</div>
     </div>
   </div>
@@ -10,7 +10,12 @@
 <script>
 export default {
   name: "GridView",
-  props: { pictures: Array } //default-Wert fehlt
+  props: { pictures: Array }, //default-Wert fehlt
+  methods: {
+    goToDetail(Array) {
+      this.$router.push({ name: "fruit", params: { pictures: name } });
+    }
+  }
 };
 </script>
 
@@ -21,7 +26,7 @@ export default {
   width: 90%;
   height: 100%;
   overflow-y: auto;
-  max-height: 70vh;
+  max-height: 80vh;
 
   display: flex;
   flex-direction: row;

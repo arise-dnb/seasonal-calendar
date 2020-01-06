@@ -226,22 +226,6 @@ export default {
   },
 
   methods: {
-    consolelog(test) {
-      console.log(test);
-      let count = 2000;
-      this.count++; //nur Zugriff auf diese Komponente
-      console.log(count); //Zugriff nur auf Variablen innerhalb der Funktion
-      this.count += count;
-      let testobj = {
-        var1: 0,
-        var2: 28
-      };
-      // console.log(testobj);
-      console.log(testobj.var2);
-      let var3 = "var2";
-      console.log(testobj[var3]); //Objekt ist im Prinzip nur ein Array
-    },
-
     currentMonth() {
       let today = new Date();
       this.curMonth = (today.getMonth() + 1).toString();
