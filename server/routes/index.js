@@ -3,14 +3,6 @@ var express = require("express");
 var router = express.Router();
 const { knex } = require("../knexExport");
 
-/* GET home page. */
-router.get("/", function(req, res, next) {
-  //res.status(500).send("Error");
-  req["user"] = "User1";
-  next();
-  //res.send({ test: "Hello World", time: new Date() });
-});
-
 router.get("/", function(req, res) {
   if (req.user === "User1") res.send("Hello " + req.user);
 });

@@ -11,7 +11,6 @@ router.get("/", function(req, res, next) {
   //res.send({ test: "Hello World", time: new Date() });
 });
 
-{      path: '/details/:Pid',      name: 'details',      component: details    }
 /*
 router.get("/", function(req, res) {
   if (req.user === "User1") res.send("Hello " + req.user);

@@ -32,7 +32,6 @@ export default {
       count: 0,
       filter: "",
       curMonth: "1",
-      array: [{ name: "Apfel", month: "1" }, { name: "Birne", month: "1" }],
 
       crops: {
         apfel: {
@@ -199,7 +198,7 @@ export default {
         {
           mID: "12",
           name: "Dezember",
-          seasonal: ["apfel", "lauch", "karotte", "apfel", "lauch", "karotte"]
+          seasonal: ["lauch"]
         } //eigentlich nur lauch
       ]
     };
