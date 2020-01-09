@@ -1,7 +1,7 @@
 <template>
   <div class="imgWrapper">
     <div v-for="(image, index) in pictures" :key="image.name + index" class="thumbnail">
-      <b-img :id="image.name" :src="image.src" fluid @click="goToDetail(image.name)" />
+      <b-img :id="image.name" :src="image.src" fluid @click="goToDetail(image.name, index)" />
       <div class="text">{{ image.name }}</div>
     </div>
   </div>
@@ -14,14 +14,16 @@ export default {
   props: { pictures: Array },
   data: function() {
     return {
-      fruit_name: "test"
+      fruit_name: "test",
+      entry: []
     };
   }, //default-Wert fehlt
   methods: {
-    goToDetail(fruit_id) {
+    goToDetail(fruit_id, index) {
+      this.entry = this.pictures[index];
       this.$router.push({
         name: "fruit",
-        params: { id: fruit_id, name: this.fruit_name }
+        params: { fruit: this.entry }
       });
     }
   }

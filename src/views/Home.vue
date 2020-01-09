@@ -199,7 +199,7 @@ export default {
           mID: "12",
           name: "Dezember",
           seasonal: ["lauch"]
-        } //eigentlich nur lauch
+        }
       ]
     };
   },
