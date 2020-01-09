@@ -1,11 +1,11 @@
 <template>
   <div class="wrapper">
     <h2>the fruit is: {{ this.$route.params.id }}</h2>
+    <div>{{ fruitDataList }}</div>
     {{ this.$route.params.name }}
     <div class="header"></div>
   </div>
 </template>
-
 <script>
 // @ is an alias to /src...
 
@@ -15,9 +15,19 @@ export default {
   name: "Fruit",
   components: {},
   data: function() {
-    return {};
+    return {
+      fruitDataList: []
+    };
+  },
+  methods: {
+    getFruitData() {
+      fetch("file.json")
+        .then(response => response.json())
+        .then(data => (this.fruitDataList = data));
+    }
   }
-}; //Teil der ausgeführt wird
+};
+//Teil der ausgeführt wird
 </script>
 
 <style>
