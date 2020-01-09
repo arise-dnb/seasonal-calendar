@@ -7,9 +7,7 @@
       <!--:key = v-bind:key-->
       <hr />
     </div>
-    <div class="list">
-      <GridView :pictures="filteredArray" />
-    </div>
+    <GridView :pictures="filteredArray" />
   </div>
 </template>
 
@@ -32,6 +30,7 @@ export default {
       count: 0,
       filter: "",
       curMonth: "1",
+      array: [{ name: "Apfel", month: "1" }, { name: "Birne", month: "1" }],
 
       crops: {
         apfel: {
@@ -107,7 +106,7 @@ export default {
       },
 
       months: [
-        { mID: "1", name: "Januar", seasonal: ["lauch", "lauch", "lauch"] },
+        { mID: "1", name: "Januar", seasonal: ["lauch"] },
         { mID: "2", name: "Februar", seasonal: ["lauch"] },
         { mID: "3", name: "März", seasonal: ["lauch", "spinat"] },
         { mID: "4", name: "April", seasonal: ["lauch", "spinat"] },
@@ -225,6 +224,22 @@ export default {
   },
 
   methods: {
+    consolelog(test) {
+      console.log(test);
+      let count = 2000;
+      this.count++; //nur Zugriff auf diese Komponente
+      console.log(count); //Zugriff nur auf Variablen innerhalb der Funktion
+      this.count += count;
+      let testobj = {
+        var1: 0,
+        var2: 28
+      };
+      // console.log(testobj);
+      console.log(testobj.var2);
+      let var3 = "var2";
+      console.log(testobj[var3]); //Objekt ist im Prinzip nur ein Array
+    },
+
     currentMonth() {
       let today = new Date();
       this.curMonth = (today.getMonth() + 1).toString();
@@ -239,9 +254,11 @@ export default {
 
 <style>
 .header {
-  width: 100%;
-  height: auto;
-  padding: 0% 3%;
+  background-color: #d4c9c0;
+  width: 90%;
+  padding-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 hr {
@@ -250,9 +267,5 @@ hr {
   height: 1px !important;
   margin-left: auto;
   margin-right: auto;
-}
-
-.list {
-  margin: 2%;
 }
 </style>
