@@ -1,11 +1,15 @@
 <template>
   <div class="wrapper">
-    <h2>the fruit is: {{ this.$route.params.id }}</h2>
-    <div>{{ fruitDataList }}</div>
-    {{ this.$route.params.name }}
-    <div class="header"></div>
+    <div class="header">
+      <h2>the fruit is: {{ this.$route.params.fruit.name }}</h2>
+      <b-img
+        :id="this.$route.params.fruit.name"
+        :src="this.$route.params.fruit.src"
+      />
+    </div>
   </div>
 </template>
+
 <script>
 // @ is an alias to /src...
 
@@ -34,6 +38,5 @@ export default {
 .wrapper {
   height: 100vh;
   width: 100vw;
-  background-color: blueviolet;
 }
 </style>
