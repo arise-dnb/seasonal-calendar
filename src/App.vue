@@ -19,7 +19,7 @@ body {
   text-align: left;
   color: #2c3e50;
   background-color: #d4c9c0;
-  height: 100vh;
+  height: auto;
   width: 100vw;
 }
 </style>

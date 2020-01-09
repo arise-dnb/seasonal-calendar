@@ -194,7 +194,7 @@ export default {
           name: "November",
           seasonal: ["apfel", "lauch", "karotte"]
         },
-        { mID: "12", name: "Dezember", seasonal: ["lauch"] }
+        { mID: "12", name: "Dezember", seasonal: ["lauch", "erbse", "spinat"] }
       ]
     };
   },
