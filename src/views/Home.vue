@@ -86,7 +86,8 @@ export default {
         lauch: {
           name: "Lauch",
           id: "204",
-          src: require("../assets/fruits/leek_s.jpg")
+          src: require("../assets/fruits/leek_s.jpg"),
+          wert: ["122", "29", "2.1", "3.3", "0.3", "2.2", "90"]
         },
         karotte: {
           name: "Karotte",
