@@ -11,6 +11,7 @@ router.get("/", function(req, res, next) {
   //res.send({ test: "Hello World", time: new Date() });
 });
 
+/*
 router.get("/", function(req, res) {
   if (req.user === "User1") res.send("Hello " + req.user);
 });
@@ -37,6 +38,7 @@ router.get("/test", async function(req, res) {
     res.status(500).send(e);
   }
 });
+*/
 
 router.post("/", function(req, res) {
   console.log(req.body);

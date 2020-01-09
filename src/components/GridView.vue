@@ -1,7 +1,16 @@
 <template>
   <div class="imgWrapper">
-    <div v-for="(image, index) in pictures" :key="image.name + index + 'g'" class="thumbnail">
-      <b-img :src="image.src" fluid />
+    <div
+      v-for="(image, index) in pictures"
+      :key="image.name + index"
+      class="thumbnail"
+    >
+      <b-img
+        :id="image.name"
+        :src="image.src"
+        fluid
+        @click="goToDetail(image.name)"
+      />
       <div class="text">{{ image.name }}</div>
     </div>
   </div>
@@ -10,7 +19,21 @@
 <script>
 export default {
   name: "GridView",
-  props: { pictures: Array } //default-Wert fehlt
+  // eslint-disable-next-line vue/require-default-prop
+  props: { pictures: Array },
+  data: function() {
+    return {
+      fruit_name: "test"
+    };
+  }, //default-Wert fehlt
+  methods: {
+    goToDetail(fruit_id) {
+      this.$router.push({
+        name: "fruit",
+        params: { id: fruit_id, name: this.fruit_name }
+      });
+    }
+  }
 };
 </script>
 
@@ -20,6 +43,8 @@ export default {
   padding: 10px 10px;
   width: 90%;
   height: 100%;
+  overflow-y: auto;
+  max-height: 80vh;
 
   display: flex;
   flex-direction: row;
@@ -27,10 +52,6 @@ export default {
   border-radius: 10px;
   background-color: white;
 
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   margin-left: auto;
   margin-right: auto;
 
