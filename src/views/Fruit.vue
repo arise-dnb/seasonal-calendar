@@ -9,7 +9,7 @@
         :wert="this.$route.params.fruit.wert"
       />
       <h3>Nährwerte (für 100 g):</h3>
-      <table style="width:25%">
+      <table style="width:50%">
         <tr>
           <th>Brennwert</th>
           <th>{{ this.$route.params.fruit.wert[0] }} kJ</th>
@@ -32,11 +32,38 @@
         </tr>
         <tr>
           <th>Ballaststoffe:</th>
-          <th>{{ this.$route.params.fruit.wert[5] }} g</th>
+          <th>{{ this.$route.params.fruit.wert[5] }}g</th>
         </tr>
         <tr>
           <th>Wassergehalt:</th>
-          <th>{{ this.$route.params.fruit.wert[6] }} %</th>
+          <th>{{ this.$route.params.fruit.wert[6] }}%</th>
+        </tr>
+      </table>
+
+      <table style="width:25%">
+        <tr>
+          <td>Vitamin C:</td>
+          <td>{{ this.$route.params.fruit.vitamins[0] }}</td>
+        </tr>
+        <tr>
+          <td>Vitamin A:</td>
+          <td>{{ this.$route.params.fruit.vitamins[1] }}</td>
+        </tr>
+        <tr>
+          <td>Vitamin E:</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Vitamin B1:</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Vitamin B2:</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Vitamin B6:</td>
+          <td></td>
         </tr>
       </table>
 
