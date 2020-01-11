@@ -7,13 +7,21 @@
         :id="this.$route.params.fruit.name"
         style="width:100%"
         :src="this.$route.params.fruit.src"
+        :cal="this.$route.params.fruit.cal"
         :wert="this.$route.params.fruit.wert"
       />
-      <h3>Nährwerte (für 100 g):</h3>
-      <table style="width:100%">
+      &nbsp;
+      <b-img
+        :id="this.$route.params.fruit.name"
+        style="width:100%"
+        :src="this.$route.params.fruit.cal"
+        :wert="this.$route.params.fruit.wert"
+      />
+
+      <table style="width:100%; background-color:#D8D8D8;">
         <tr>
-          <th colspan="2">Nährwerte</th>
-          <th colspan="2">Vitamine</th>
+          <th colspan="2" style="font-size:140%;">Nährwerte</th>
+          <th colspan="2" style="font-size:140%;">Vitamine</th>
         </tr>
         <tr>
           <th>Brennwert:</th>
