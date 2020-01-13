@@ -44,15 +44,14 @@ export default {
 .imgWrapper {
   padding: 10px 10px;
   width: 90%;
-  height: 100%;
-  overflow-y: auto;
-  max-height: 80vh;
+  overflow-y: scroll;
+  max-height: 70vh;
 
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   border-radius: 10px;
-  background-color: white;
+  background-color: greenyellow;
 
   margin-left: auto;
   margin-right: auto;

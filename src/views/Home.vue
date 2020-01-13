@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <div class="header">
       <DateHeader />
       <SearchBar @childToParent="onSearch" />
@@ -7,7 +7,7 @@
       <!--:key = v-bind:key-->
       <hr />
     </div>
-    <GridView :pictures="filteredArray" />
+    <GridView id="FruitGrid" :pictures="filteredArray" />
   </div>
 </template>
 
@@ -152,7 +152,16 @@ export default {
         {
           mID: "1",
           name: "Januar",
-          seasonal: ["lauch", "apfel", "birne", "karotte", "paprika"]
+          seasonal: [
+            "lauch",
+            "apfel",
+            "birne",
+            "karotte",
+            "lauch",
+            "apfel",
+            "birne",
+            "karotte"
+          ]
         },
         {
           mID: "2",
@@ -308,8 +317,14 @@ export default {
 </script>
 
 <style>
+.wrapper {
+  background-color: crimson;
+  margin: auto;
+  max-width: 600px;
+}
+
 .header {
-  background-color: #d4c9c0;
+  background-color: blue;
   width: 90%;
   padding-top: 5%;
   margin-left: auto;
@@ -322,5 +337,9 @@ hr {
   height: 1px !important;
   margin-left: auto;
   margin-right: auto;
+}
+
+#FruitGrid {
+  background-color: aqua;
 }
 </style>
