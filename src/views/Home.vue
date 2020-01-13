@@ -7,7 +7,9 @@
       <!--:key = v-bind:key-->
       <hr />
     </div>
-    <GridView id="FruitGrid" :pictures="filteredArray" />
+    <div class="body">
+      <GridView id="FruitGrid" :pictures="filteredArray" />
+    </div>
   </div>
 </template>
 
@@ -30,7 +32,8 @@ export default {
       count: 0,
       filter: "",
       curMonth: "1",
-      array: [{ name: "Apfel", month: "1" }, { name: "Birne", month: "1" }],
+      width: 0,
+      height: 0,
 
       crops: {
         apfel: {
@@ -283,24 +286,17 @@ export default {
   },
 
   mounted() {
-    this.currentMonth();
+    this.currentMonth(), window.addEventListener("resize", this.resizeAction);
+  },
+
+  beforeDestroy() {
+    window.removeEventListener("resize", this.resizeAction);
   },
 
   methods: {
-    consolelog(test) {
-      console.log(test);
-      let count = 2000;
-      this.count++; //nur Zugriff auf diese Komponente
-      console.log(count); //Zugriff nur auf Variablen innerhalb der Funktion
-      this.count += count;
-      let testobj = {
-        var1: 0,
-        var2: 28
-      };
-      // console.log(testobj);
-      console.log(testobj.var2);
-      let var3 = "var2";
-      console.log(testobj[var3]); //Objekt ist im Prinzip nur ein Array
+    resizeAction() {
+      this.width = window.innerWidth;
+      this.height = window.innerHeight;
     },
 
     currentMonth() {
@@ -325,6 +321,7 @@ export default {
 .header {
   background-color: blue;
   width: 90%;
+  min-height: 20%;
   padding-top: 5%;
   margin-left: auto;
   margin-right: auto;
@@ -338,7 +335,10 @@ hr {
   margin-right: auto;
 }
 
-#FruitGrid {
+.body {
   background-color: aqua;
+  display: flex;
+  align-items: center;
+  max-height: 80%;
 }
 </style>

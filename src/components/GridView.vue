@@ -35,8 +35,9 @@ export default {
 .imgWrapper {
   padding: 10px 10px;
   width: 90%;
+  max-height: 96%;
+  height: auto;
   overflow-y: scroll;
-  max-height: 70vh;
 
   display: flex;
   flex-direction: row;

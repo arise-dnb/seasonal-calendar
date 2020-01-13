@@ -24,6 +24,6 @@ body {
   width: 100vw;
   max-height: 100vh;
   max-width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 </style>
