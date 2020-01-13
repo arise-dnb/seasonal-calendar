@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="header">
+    <div ref="test" class="header">
       <DateHeader />
       <SearchBar @childToParent="onSearch" />
       <!--<div v-for="element in filteredArray" :key="element">{{ element }}</div>-->
@@ -8,7 +8,7 @@
       <hr />
     </div>
     <div class="body">
-      <GridView id="FruitGrid" :pictures="filteredArray" />
+      <GridView id="FruitGrid" :pictures="filteredArray" :height="divhght + 'px'" />
     </div>
   </div>
 </template>
@@ -32,8 +32,9 @@ export default {
       count: 0,
       filter: "",
       curMonth: "1",
-      width: 0,
-      height: 0,
+      wdth: 0,
+      hght: 0,
+      divhght: 0,
 
       crops: {
         apfel: {
@@ -296,8 +297,9 @@ export default {
 
   methods: {
     resizeAction() {
-      this.width = window.innerWidth;
-      this.height = window.innerHeight;
+      this.wdth = window.innerWidth;
+      this.hght = window.innerHeight;
+      this.divhght = (this.hght - this.$refs.test.clientHeight) * 0.5;
     },
 
     currentMonth() {
@@ -340,6 +342,5 @@ hr {
   background-color: aqua;
   display: flex;
   align-items: center;
-  max-height: 80%;
 }
 </style>
