@@ -9,7 +9,8 @@
 
 html,
 body {
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
 #app {
@@ -18,8 +19,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
   color: #2c3e50;
-  background-color: #d4c9c0;
-  height: auto;
+  background-color: yellow;
+  height: 100vh;
   width: 100vw;
+  max-height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
 }
 </style>

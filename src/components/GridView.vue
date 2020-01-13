@@ -1,16 +1,7 @@
 <template>
   <div class="imgWrapper">
-    <div
-      v-for="(image, index) in pictures"
-      :key="image.name + index"
-      class="thumbnail"
-    >
-      <b-img
-        :id="image.name"
-        :src="image.src"
-        fluid
-        @click="goToDetail(image.name, index)"
-      />
+    <div v-for="(image, index) in pictures" :key="image.name + index" class="thumbnail">
+      <b-img :id="image.name" :src="image.src" fluid @click="goToDetail(image.name, index)" />
       <div class="text">{{ image.name }}</div>
     </div>
   </div>
@@ -44,15 +35,14 @@ export default {
 .imgWrapper {
   padding: 10px 10px;
   width: 90%;
-  height: 100%;
-  overflow-y: auto;
-  max-height: 80vh;
+  overflow-y: scroll;
+  max-height: 70vh;
 
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   border-radius: 10px;
-  background-color: white;
+  background-color: greenyellow;
 
   margin-left: auto;
   margin-right: auto;
