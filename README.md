@@ -1,6 +1,8 @@
 # seasonal-calendar
 
-The name says what it is. It shows the seasonally available crops according to the current date.
+The App is a seasonal calender. It shows the seasonally available crops according to the current date.
+Besides there is an information site. There you can get informations about the nutritional values and the vitamins.
+To get there click on the picture of the fruit.
 
 ## Project setup
 

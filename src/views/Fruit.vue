@@ -10,34 +10,34 @@
         :cal="this.$route.params.fruit.cal"
         :wert="this.$route.params.fruit.wert"
       />&nbsp;
-      <b-img
-        :id="this.$route.params.fruit.name"
-        style="width:100%"
-        :src="this.$route.params.fruit.cal"
-        :wert="this.$route.params.fruit.wert"
-      />
 
       <table style="width:100%">
         <tr>
-          <th>Jan</th>
-          <th>Feb</th>
-          <th>Mar</th>
-          <th>Apr</th>
-          <th>Mai</th>
-          <th>Jun</th>
-          <th>Jul</th>
-          <th>Aug</th>
-          <th>Sep</th>
-          <th>Okt</th>
-          <th>Nov</th>
-          <th>Dec</th>
+          <th style="background-color:#D8D8D8; align:center;">Jan</th>
+          <th style="background-color:#D8D8D8;">Feb</th>
+          <th style="background-color:#D8D8D8;">Mar</th>
+          <th style="background-color:#D8D8D8;">Apr</th>
+          <th style="background-color:#D8D8D8;">Mai</th>
+          <th style="background-color:#D8D8D8;">Jun</th>
+          <th style="background-color:#D8D8D8;">Jul</th>
+          <th style="background-color:#D8D8D8;">Aug</th>
+          <th style="background-color:#D8D8D8;">Sep</th>
+          <th style="background-color:#D8D8D8;">Okt</th>
+          <th style="background-color:#D8D8D8;">Nov</th>
+          <th style="background-color:#D8D8D8;">Dec</th>
         </tr>
-        <tr>
-          <th v-for="month in this.$route.params.fruit.inseason" :key="month">
-            <span v-if="month === 1" background-color="red">{{ month }}</span
-            ><span v-else-if="month === 2" background-color="green">{{
+        <tr style="height: 20px;">
+          <th
+            v-for="month in this.$route.params.fruit.inseason"
+            :key="month"
+            :style="{ backgroundColor: month }"
+          >
+            <!--<div v-if="month == 1" style="background-color:red;"></div>
+            <span v-if="month === 1"  style="background-color:#D8D8D8;">{{ month }}</span
+            ><span v-else-if="month === 2"  style="background-color:#D8D8D8;">{{
               month
-            }}</span>
+            }}</span> 
+            -->
           </th>
         </tr>
       </table>
