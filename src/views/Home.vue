@@ -135,7 +135,8 @@ export default {
           src: require("../assets/fruits/paprika_s.jpg"),
           cal: require("../assets/fruits/apple_calender.png"),
           wert: ["155", "37", "1.3", "6.4", "0.5", "3.6", "87"],
-          vitamins: ["140", "0.35", "2.9", "0.04", "0.12", "0.45"]
+          vitamins: ["140", "0.35", "2.9", "0.04", "0.12", "0.45"],
+          inseason: ["0", "2"]
         },
         spinat: {
           name: "Spinat",
@@ -151,7 +152,7 @@ export default {
         {
           mID: "1",
           name: "Januar",
-          seasonal: ["lauch", "apfel", "birne", "karotte"]
+          seasonal: ["lauch", "apfel", "birne", "karotte", "paprika"]
         },
         {
           mID: "2",
