@@ -18,8 +18,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
-  color: #2c3e50;
-  background-color: yellow;
+  color: #1f1f1f;
+  background-color: #d4cac1;
   height: 100vh;
   width: 100vw;
   max-height: 100vh;

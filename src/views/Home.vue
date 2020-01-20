@@ -1,18 +1,12 @@
 <template>
   <div class="wrapper">
-    <div ref="test" class="header">
+    <div ref="topBar" class="header">
       <DateHeader />
       <SearchBar @childToParent="onSearch" />
-      <!--<div v-for="element in filteredArray" :key="element">{{ element }}</div>-->
-      <!--:key = v-bind:key-->
       <hr />
     </div>
-    <div class="body">
-      <GridView
-        id="FruitGrid"
-        :pictures="filteredArray"
-        :height="divhght + 'px'"
-      />
+    <div class="body" :style="{ height: divhght }">
+      <GridView :pictures="filteredArray" :style="{ height: divhght }" />
     </div>
   </div>
 </template>
@@ -480,6 +474,9 @@ export default {
         })[0]
         .seasonal.map(function(seasonal) {
           return self.crops[seasonal];
+        })
+        .filter(function(fruit) {
+          return fruit.name.toLowerCase().includes(self.filter.toLowerCase());
         });
     },
 
@@ -489,7 +486,9 @@ export default {
   },
 
   mounted() {
-    this.currentMonth(), window.addEventListener("resize", this.resizeAction);
+    this.currentMonth(),
+      window.addEventListener("resize", this.resizeAction),
+      this.resizeAction();
   },
 
   beforeDestroy() {
@@ -500,7 +499,8 @@ export default {
     resizeAction() {
       this.wdth = window.innerWidth;
       this.hght = window.innerHeight;
-      this.divhght = (this.hght - this.$refs.test.clientHeight) * 0.5;
+      this.divhght = this.hght - 1.2 * this.$refs.topBar.offsetHeight + "px";
+      console.log(this.divhght);
     },
 
     currentMonth() {
@@ -517,13 +517,11 @@ export default {
 
 <style>
 .wrapper {
-  background-color: crimson;
   margin: auto;
   max-width: 600px;
 }
 
 .header {
-  background-color: blue;
   width: 90%;
   min-height: 20%;
   padding-top: 5%;
@@ -532,16 +530,16 @@ export default {
 }
 
 hr {
-  background-color: #2c3e50;
+  background-color: #1f1f1f;
   width: 95%;
-  height: 1px !important;
+  height: 2px !important;
   margin-left: auto;
   margin-right: auto;
 }
 
 .body {
-  background-color: aqua;
   display: flex;
   align-items: center;
+  height: 80%;
 }
 </style>
