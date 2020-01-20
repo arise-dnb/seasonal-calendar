@@ -28,8 +28,8 @@ export default {
   name: "Home",
   components: {
     DateHeader,
-    GridView,
-    SearchBar
+    GridView
+    // SearchBar
   },
   data: function() {
     return {
@@ -361,10 +361,11 @@ export default {
             "apfel",
             "birne",
             "karotte",
-            "lauch",
-            "apfel",
-            "birne",
-            "karotte"
+            "brombeere",
+            "spinat",
+            "blaubeere",
+            "blumenkohl",
+            "erbse"
           ]
         },
         {
