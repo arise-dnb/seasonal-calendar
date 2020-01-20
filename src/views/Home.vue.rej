@@ -1,0 +1,4 @@
+diff a/src/views/Home.vue b/src/views/Home.vue	(rejected hunks)
+@@ -264 +264 @@ export default {
+-           "#FA8258",
++            "#FA8258",

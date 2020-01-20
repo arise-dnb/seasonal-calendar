@@ -1,0 +1,14 @@
+diff a/src/views/Fruit.vue b/src/views/Fruit.vue	(rejected hunks)
+@@ -13 +12,0 @@
+-     
+@@ -34 +33 @@
+-            :style="{backgroundColor: month}"
++            :style="{ backgroundColor: month }"
+@@ -36 +34,0 @@
+-           
+@@ -117,3 +115,2 @@ export default {
+-    },
+-
+-  },
++    }
++  }
