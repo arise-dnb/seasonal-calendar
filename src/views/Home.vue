@@ -350,7 +350,17 @@ export default {
         {
           mID: "1",
           name: "Januar",
-          seasonal: ["lauch", "apfel", "birne", "karotte"]
+          seasonal: [
+            "lauch",
+            "apfel",
+            "birne",
+            "karotte",
+            "brombeere",
+            "spinat",
+            "blaubeere",
+            "blumenkohl",
+            "erbse"
+          ]
         },
         {
           mID: "2",
