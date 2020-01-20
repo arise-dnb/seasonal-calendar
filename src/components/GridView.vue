@@ -1,5 +1,5 @@
 <template>
-  <div class="imgWrapper" :style="{ height: hght }">
+  <div class="imgWrapper" :style="{ height: divheight }">
     <div v-for="(image, index) in pictures" :key="image.name + index" class="thumbnail">
       <b-img :id="image.name" :src="image.src" fluid @click="goToDetail(image.name, index)" />
       <div class="text">{{ image.name }}</div>
@@ -11,7 +11,7 @@
 export default {
   name: "GridView",
   // eslint-disable-next-line vue/require-default-prop
-  props: { pictures: Array, hght: Number },
+  props: { pictures: Array, divheight: Number },
   data: function() {
     return {
       fruit_name: "test",
@@ -35,14 +35,13 @@ export default {
 .imgWrapper {
   padding: 10px 10px;
   width: 90%;
-  max-height: 96%;
   overflow-y: scroll;
 
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   border-radius: 10px;
-  background-color: greenyellow;
+  background-color: white;
 
   margin-left: auto;
   margin-right: auto;
