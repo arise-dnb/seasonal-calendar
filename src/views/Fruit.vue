@@ -2,15 +2,16 @@
   <div class="wrapper">
     <div class="header">
       <h2>{{ this.$route.params.fruit.name }}</h2>
-
       <b-img
         :id="this.$route.params.fruit.name"
         style="width:100%"
         :src="this.$route.params.fruit.src"
         :cal="this.$route.params.fruit.cal"
         :wert="this.$route.params.fruit.wert"
-      />&nbsp;
-
+      />
+    </div>
+    <div class="tables">
+      <br />
       <table style="width:100%">
         <tr>
           <th style="background-color:#D8D8D8; align:center;">Jan</th>
@@ -31,16 +32,11 @@
             v-for="month in this.$route.params.fruit.inseason"
             :key="month"
             :style="{ backgroundColor: month }"
-          >
-            <!--<div v-if="month == 1" style="background-color:red;"></div>
-            <span v-if="month === 1"  style="background-color:#D8D8D8;">{{ month }}</span
-            ><span v-else-if="month === 2"  style="background-color:#D8D8D8;">{{
-              month
-            }}</span> 
-            -->
-          </th>
+          ></th>
         </tr>
       </table>
+
+      <br />
 
       <table style="width:100%; background-color:#D8D8D8;">
         <tr>
@@ -89,7 +85,7 @@
         </tr>
       </table>
 
-      <var></var>
+      <br />
     </div>
   </div>
 </template>
@@ -122,5 +118,12 @@ export default {
 .wrapper {
   height: 100vh;
   width: 100vw;
+}
+.header {
+  width: 100%;
+}
+.table {
+  background-color: white;
+  border-radius: 10px;
 }
 </style>
