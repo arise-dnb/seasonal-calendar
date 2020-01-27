@@ -67,15 +67,15 @@ export default {
           inseason: [
             "#FA8258",
             "#FA8258",
-            "#FA8258",
+            "#D8D8D8",
+            "#D8D8D8",
+            "#D8D8D8",
+            "#D8D8D8",
+            "#D8D8D8",
             "#D8D8D8",
             "#B40404",
-            "#B40404",
-            "#B40404",
-            "#B40404",
-            "#B40404",
-            "#B40404",
-            "#B40404",
+            "#FA8258",
+            "#FA8258",
             "#FA8258"
           ]
         },
@@ -351,15 +351,15 @@ export default {
           mID: "1",
           name: "Januar",
           seasonal: [
-            "lauch",
             "apfel",
             "birne",
-            "karotte",
-            "brombeere",
-            "spinat",
             "blaubeere",
             "blumenkohl",
-            "erbse"
+            "brombeere",
+            "erbse",
+            "karotte",
+            "lauch",
+            "spinat"
           ]
         },
         {
